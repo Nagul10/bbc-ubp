@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+
+<div class="content">
+    <div class="container">
+        <h2 class="mb-5">Bills </h2>
+        <div class="table-responsive custom-table-responsive">
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <label class="control control--checkbox">
+                                <input type="checkbox" class="js-check-all" />
+                                <div class="control__indicator"></div>
+                            </label>
+                        </th>
+                        <th scope="col">Bill Id</th>
+                        <th scope="col">Units Counsumed</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Due Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bill of bills" scope="row">
+                        <th scope="row">
+                            <label class="control control--checkbox">
+                                <input type="radio" name="select" />
+                                <div class="control__indicator"></div>
+                            </label>
+                        </th>
+                        <td>
+                            {{bill.billId}}
+                        </td>
+                        <td>{{bill.unitsConsumed}}</td>
+                        <td>
+                            {{bill.amount}}
+                        </td>
+                        <td>{{bill.billDueDate}}</td>
+
+                        <td>
+                            <span ngClass="{
+                                'badge badge-success':bill.isPaid
+                                'badge badge-danger':!bill.isPaid  
+                            }">{{bill.isPaid?"Paid":"Not Paid"}}</span>
+
+                        </td>
+                        <td><button type="button" class="btn-sm btn-success">Pay Bill</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+</div>

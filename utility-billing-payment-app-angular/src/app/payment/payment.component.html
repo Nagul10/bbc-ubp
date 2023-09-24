@@ -1,0 +1,162 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="text-center">
+                <h2>Select Payment Option</h2>
+            </div>
+            <div class="d-flex btn-group justify-content-center mb-4">
+                <button class="btn btn-primary mx-2" [ngClass]="{'active': selectedOption === 'debit-card'}"
+                    (click)="selectPaymentOption('debit-card')">
+                    Debit Card
+
+                </button>
+
+                <button class="btn btn-primary mx-2" [ngClass]="{'active': selectedOption === 'credit-card'}"
+                    (click)="selectPaymentOption('credit-card')">
+                    Credit Card
+                </button>
+                <button class="btn btn-primary mx-2" [ngClass]="{'active': selectedOption === 'net-banking'}"
+                    (click)="selectPaymentOption('net-banking')">
+                    Net Banking
+                </button>
+                <button class="btn btn-primary mx-2" [ngClass]="{'active': selectedOption === 'upi'}"
+                    (click)="selectPaymentOption('upi')">
+                    UPI
+                </button>
+            </div>
+
+            <!-- Debit Card Payment Details -->
+            <div [hidden]="selectedOption !== 'debit-card'">
+                <h3>Debit Card Payment</h3>
+                <!-- Add debit card payment form here -->
+                <div class="card">
+                    <div class="card-header">
+                        Debit Card Payment
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="expirationDate">Expiration Date</label>
+                                    <input type="text" class="form-control" id="expirationDate" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="CVV">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardHolderName">Cardholder's Name</label>
+                                <input type="text" class="form-control" id="cardHolderName"
+                                    placeholder="Enter cardholder's name">
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block">Pay Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credit Card Payment Details -->
+            <div [hidden]="selectedOption !== 'credit-card'">
+                <h3>Credit Card Payment</h3>
+                <!-- Add credit card payment form here -->
+                <div class="card">
+                    <div class="card-header">
+                        Credit Card Payment
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="expirationDate">Expiration Date</label>
+                                    <input type="text" class="form-control" id="expirationDate" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="CVV">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardHolderName">Cardholder's Name</label>
+                                <input type="text" class="form-control" id="cardHolderName"
+                                    placeholder="Enter cardholder's name">
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block">Pay Now</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Net Banking Payment Details -->
+            <div [hidden]="selectedOption !== 'net-banking'">
+                <h3>Net Banking Payment</h3>
+                <!-- Add net banking payment form here -->
+                <div class="card">
+                    <div class="card-header">
+                        Net Banking Payment
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="bank">Select Your Bank</label>
+                                <select class="form-control" id="bank">
+                                    <option>Select Bank</option>
+                                    <option>Bank A</option>
+                                    <option>Bank B</option>
+                                    <option>Bank C</option>
+                                    <!-- Add more bank options here -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password">
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block">Pay Now</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- UPI Payment Details -->
+            <div [hidden]="selectedOption !== 'upi'">
+                <h3>UPI Payment</h3>
+                <!-- Add UPI payment form here -->
+                <div class="card">
+                    <div class="card-header">
+                        UPI Payment
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="upiId">UPI ID</label>
+                                <input type="text" class="form-control" id="upiId" placeholder="Enter your UPI ID"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label>Amount</label>
+                                <p class="form-control-static">{{ amount }}</p>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block">Pay Now</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

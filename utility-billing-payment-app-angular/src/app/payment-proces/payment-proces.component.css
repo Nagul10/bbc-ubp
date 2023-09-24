@@ -1,0 +1,73 @@
+/* Center the buttons horizontally */
+.d-flex.justify-content-center {
+    justify-content: center;
+}
+
+/* Style the active button */
+.btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Style the payment details sections */
+div[hidden] {
+    display: none;
+}
+
+/* Add some padding and margin to the sections */
+div[hidden] h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style the payment forms (customize as needed) */
+/* Example styles for input fields */
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Example style for the "Confirm" button */
+form .btn-primary {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Center the payment forms */
+form {
+    text-align: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
